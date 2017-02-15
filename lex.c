@@ -16,16 +16,7 @@ int lex(char **src, int *num)
                 str++;
                 break;
             }
-            case '0':
-            case '1':
-            case '2':
-            case '3':
-            case '4':
-            case '5':
-            case '6':
-            case '7':
-            case '8':
-            case '9': {
+            case '0' ... '9': {
                 int i = 0;
                 do {
                     i = i * 10 + (*str) - '0';
