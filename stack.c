@@ -11,6 +11,15 @@ struct stack *stk_new()
     return data;
 }
 
+int stk_peek(struct stack *data)
+{
+    if(data->cpos > 0) {
+        int newpos = data->cpos - sizeof(int);
+        return *(int*) (data->mem + newpos);
+    }
+    return 0;
+}
+
 int stk_pop(struct stack *data)
 {
     if(data->cpos == 0) {
@@ -20,7 +29,7 @@ int stk_pop(struct stack *data)
     void *old = data->mem;
     int cpos = data->cpos;
     int newpos = cpos - sizeof(int);
-    int ret = *(int*) (data->mem + newpos);
+    int ret = stk_peek(data);
     data->mem = realloc(old, newpos);
     data->cpos = newpos;
     return ret;

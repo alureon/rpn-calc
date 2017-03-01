@@ -10,4 +10,9 @@
 #define OP_SUB 6
 #define OP_DIV 7
 
+#define PREC_ADD 2
+#define PREC_SUB 2
+#define PREC_DIV 3
+#define PREC_MUL 3
+
 int lex(char **src, int *num);

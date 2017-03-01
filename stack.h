@@ -7,3 +7,4 @@ struct stack *stk_new();
 void stk_push(struct stack *stk, int i);
 int stk_pop(struct stack *stk);
 void stk_close(struct stack *data);
+int stk_peek(struct stack *data);
